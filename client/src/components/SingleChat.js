@@ -17,10 +17,10 @@ import io from "socket.io-client";
 import axios from "axios";
 import "./styles.css";
 
-// const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "http://localhost:5000";
 // -------- PROD --------
 
-const ENDPOINT = "https://mern-chatter-0d9533af93c6.herokuapp.com/ ";
+// const ENDPOINT = "https://mern-chatter-0d9533af93c6.herokuapp.com/ ";
 
 // -------- PROD --------
 

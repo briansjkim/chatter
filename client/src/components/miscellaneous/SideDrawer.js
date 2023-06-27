@@ -35,7 +35,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { getSender } from "../../config/chatLogics";
 
 const SideDrawer = () => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState();
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadingChat, setLoadingChat] = useState(false);
@@ -62,17 +62,17 @@ const SideDrawer = () => {
     navigate("/");
   };
 
-  useEffect(() => {
-    const fetchInitUsers = async () => {
-      setLoading(true);
-      const { data } = await axios.get("/api/user", config);
+  // useEffect(() => {
+  //   const fetchInitUsers = async () => {
+  //     setLoading(true);
+  //     const { data } = await axios.get("/api/user", config);
 
-      setLoading(false);
-      setSearchResult(data);
-    };
+  //     setLoading(false);
+  //     setSearchResult(data);
+  //   };
 
-    fetchInitUsers();
-  }, []);
+  //   fetchInitUsers();
+  // }, []);
 
   const handleSearch = async () => {
     try {

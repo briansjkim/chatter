@@ -1,16 +1,13 @@
 // responsible for connecting to our db
-require("dotenv").config();
+// require("dotenv").config();
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(
-      "mongodb+srv://briansungjinkim:wO188t65Bz9RXgoZ@cluster0.eldmewp.mongodb.net/?retryWrites=true&w=majority",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
     console.log(`MongoDB connected: ${conn.connection.host}`);
   } catch (error) {
