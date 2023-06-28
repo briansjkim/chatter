@@ -44,7 +44,7 @@ const UpdateGroupChatModal = ({ fetchMessages }) => {
       setLoading(true);
 
       await axios.put(
-        "/api/chat/groupchangeadmin",
+        "https://chatter-platform.onrender.com/api/chat/groupchangeadmin",
         {
           chatId: chatId,
           newAdminId: newAdminId,
@@ -86,7 +86,7 @@ const UpdateGroupChatModal = ({ fetchMessages }) => {
       setLoading(true);
 
       const { data } = await axios.put(
-        "/api/chat/groupremove",
+        "https://chatter-platform.onrender.com/api/chat/groupremove",
         {
           chatId: selectedChat._id,
           userId: userToRemove._id,
@@ -147,7 +147,7 @@ const UpdateGroupChatModal = ({ fetchMessages }) => {
       setLoading(true);
 
       const { data } = await axios.put(
-        "/api/chat/groupadd",
+        "https://chatter-platform.onrender.com/api/chat/groupadd",
         {
           chatId: selectedChat._id,
           userId: userToAdd._id,
@@ -178,7 +178,7 @@ const UpdateGroupChatModal = ({ fetchMessages }) => {
       setRenameLoading(true);
 
       const { data } = await axios.put(
-        "/api/chat/rename",
+        "https://chatter-platform.onrender.com/api/chat/rename",
         {
           chatId: selectedChat._id,
           chatName: groupChatName,
@@ -217,7 +217,10 @@ const UpdateGroupChatModal = ({ fetchMessages }) => {
       setLoading(true);
 
       const fetchUsers = async () => {
-        const { data } = await axios.get(`/api/user?search=${search}`, config);
+        const { data } = await axios.get(
+          `https://chatter-platform.onrender.com/api/user?search=${search}`,
+          config
+        );
         setSearchResult(data);
         setLoading(false);
       };

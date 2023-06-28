@@ -114,7 +114,7 @@ const Signup = () => {
       };
 
       const { data } = await axios.post(
-        "https://chatter-platform.onrender.com/user",
+        "/api/user",
         { name, email, password, pic },
         config
       );

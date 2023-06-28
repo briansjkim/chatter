@@ -46,7 +46,7 @@ const Login = () => {
         },
       };
       const { data } = await axios.post(
-        "https://chatter-platform.onrender.com/api/user/login",
+        "/api/user/login",
         { email, password },
         config
       );
