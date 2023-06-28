@@ -22,7 +22,10 @@ const MyChats = () => {
 
   const fetchChats = async () => {
     try {
-      const { data } = await axios.get("/api/chat", config);
+      const { data } = await axios.get(
+        "https://chatter-platform.onrender.com/api/chat",
+        config
+      );
 
       setChats(data);
     } catch (error) {

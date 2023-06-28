@@ -48,7 +48,10 @@ const GroupChatModal = ({ children }) => {
       setLoading(true);
 
       const fetchUsers = async () => {
-        const { data } = await axios.get(`/api/user?search=${search}`, config);
+        const { data } = await axios.get(
+          `https://chatter-platform.onrender.com/api/user?search=${search}`,
+          config
+        );
         setSearchResult(data);
         setLoading(false);
       };
@@ -105,7 +108,7 @@ const GroupChatModal = ({ children }) => {
 
     try {
       const { data } = await axios.post(
-        "/api/chat/group",
+        "https://chatter-platform.onrender.com/api/chat/group",
         {
           name: groupChatName,
           users: JSON.stringify(selectedUsers.map((user) => user._id)),

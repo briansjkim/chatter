@@ -90,7 +90,10 @@ const SideDrawer = () => {
         setSearchResult(data);
         return;
       }
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await axios.get(
+        `https://chatter-platform.onrender.com/api/user?search=${search}`,
+        config
+      );
 
       setLoading(false);
       setSearchResult(data);
@@ -110,7 +113,11 @@ const SideDrawer = () => {
     try {
       setLoadingChat(true);
 
-      const { data } = await axios.post("/api/chat", { userId }, config);
+      const { data } = await axios.post(
+        "https://chatter-platform.onrender.com/api/chat",
+        { userId },
+        config
+      );
 
       if (!chats.find((c) => c._id === data._id)) setChats([...chats, data]);
 
