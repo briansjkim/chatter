@@ -64,8 +64,6 @@ const server = app.listen(PORT, () =>
 );
 
 const io = require("socket.io")(server, {
-  // amount of time it'll wait before it closes the connection in order to save bandwidth
-  pingTimeout: 60000,
   cors: {
     origin: "https://chatter-platform.onrender.com/",
   },
