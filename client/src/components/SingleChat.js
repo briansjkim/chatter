@@ -17,7 +17,7 @@ import io from "socket.io-client";
 import axios from "axios";
 import "./styles.css";
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "/";
 // -------- PROD --------
 
 // const ENDPOINT = "https://mern-chatter-0d9533af93c6.herokuapp.com/ ";
@@ -56,7 +56,7 @@ const SingleChat = () => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `https://chatter-platform.onrender.com/api/message/${selectedChat._id}`,
+        `/api/message/${selectedChat._id}`,
         config
       );
 
@@ -84,7 +84,7 @@ const SingleChat = () => {
         setNewMessage("");
 
         const { data } = await axios.post(
-          "https://chatter-platform.onrender.com/message",
+          "/api/message",
           {
             content: newMessage,
             chatId: selectedChat._id,
