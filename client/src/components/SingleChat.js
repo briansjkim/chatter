@@ -56,7 +56,7 @@ const SingleChat = () => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `/api/message/${selectedChat._id}`,
+        `https://chatter-platform.onrender.com/api/message/${selectedChat._id}`,
         config
       );
 
@@ -84,7 +84,7 @@ const SingleChat = () => {
         setNewMessage("");
 
         const { data } = await axios.post(
-          "/api/message",
+          "https://chatter-platform.onrender.com/message",
           {
             content: newMessage,
             chatId: selectedChat._id,

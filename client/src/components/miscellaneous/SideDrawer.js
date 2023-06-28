@@ -90,7 +90,10 @@ const SideDrawer = () => {
         setSearchResult(data);
         return;
       }
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await axios.get(
+        `https://chatter-platform.onrender.com/api/user?search=${search}`,
+        config
+      );
 
       setLoading(false);
       setSearchResult(data);
