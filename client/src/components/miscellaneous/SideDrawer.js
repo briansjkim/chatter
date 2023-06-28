@@ -62,24 +62,30 @@ const SideDrawer = () => {
     navigate("/");
   };
 
-  // useEffect(() => {
-  //   const fetchInitUsers = async () => {
-  //     setLoading(true);
-  //     const { data } = await axios.get("/api/user", config);
+  useEffect(() => {
+    const fetchInitUsers = async () => {
+      setLoading(true);
+      const { data } = await axios.get(
+        "https://chatter-platform.onrender.com/api/user",
+        config
+      );
 
-  //     setLoading(false);
-  //     setSearchResult(data);
-  //   };
+      setLoading(false);
+      setSearchResult(data);
+    };
 
-  //   fetchInitUsers();
-  // }, []);
+    fetchInitUsers();
+  }, []);
 
   const handleSearch = async () => {
     try {
       setLoading(true);
 
       if (!search) {
-        const { data } = await axios.get("/api/user", config);
+        const { data } = await axios.get(
+          "https://chatter-platform.onrender.com/api/user",
+          config
+        );
         setLoading(false);
         setSearchResult(data);
         return;
