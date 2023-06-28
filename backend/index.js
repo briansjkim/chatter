@@ -65,7 +65,7 @@ const server = app.listen(PORT, () =>
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "/",
+    origin: "https://chatter-platform.onrender.com/",
   },
 });
 
